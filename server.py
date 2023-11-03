@@ -44,13 +44,16 @@ def adduser():
     lastname = request.form["lastname"]
     name = request.form["name"]
     surname = request.form["surname"]
-    user = User.query.filter(username=username).first()
+    user = db.session.query(User).filter(User.username==username).first()
     if user:
         return jsonify({'msg': 'Такой пользователь уже есть'}), 404
-    new_user = User(username=username, password=password, email=email, phone=phone, 
+    new_user = User(username=username, email=email, phone=phone, 
                     lastname=lastname, name=name, surname=surname)
+    new_user.set_password(password)
     with app.app_context():
         db.session.add(new_user)
+        db.session.flush()
+        session['user'] = new_user.to_json
         db.session.commit()
     return redirect(url_for('index'))
 
