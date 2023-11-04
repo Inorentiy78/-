@@ -1,5 +1,79 @@
 {% extends "base.html" %} {% block content %}
 
-<div>hello</div>
+<div class="container">
+  <h1>Тест на выбор профессии</h1>
+  <form id="profession-form">
+    <div>
+      <p>Где вы хотите работать?</p>
+      <label
+        ><input type="radio" name="q1" value="хочу работать среди людей" />Хочу
+        работать среди людей</label
+      >
+      <label
+        ><input type="radio" name="q1" value="хочу работать один" />Хочу
+        работать один</label
+      >
+    </div>
+    <div>
+      <p>Как вы хотите, чтобы люди к вам относились?</p>
+      <label
+        ><input
+          type="radio"
+          name="q2"
+          value="хочу чтобы выполняли мои приказы"
+        />Хочу чтобы выполняли мои приказы</label
+      >
+      <label
+        ><input
+          type="radio"
+          name="q2"
+          value="хочу чтобы мы работали вместе и сообща"
+        />Хочу чтобы мы работали вместе и сообща</label
+      >
+      <label
+        ><input type="radio" name="q2" value="хочу работать один дома" />Хочу
+        работать один дома</label
+      >
+    </div>
+    <div>
+      <p>Какие навыки у вас есть?</p>
+      <label
+        ><input type="radio" name="q3" value="помогу ему найти решение" />Помогу
+        ему найти решение</label
+      >
+      <label
+        ><input
+          type="radio"
+          name="q3"
+          value="начну его учить, ведь я это знаю"
+        />Начну его учить, ведь я это знаю</label
+      >
+      <label
+        ><input type="radio" name="q3" value="я его нарисую" />Я его
+        нарисую</label
+      >
+      <label
+        ><input type="radio" name="q3" value="ведь я хороший художник" />Ведь я
+        хороший художник</label
+      >
+    </div>
+    <div>
+      <p>Как часто вы готовы помогать другим?</p>
+      <label
+        ><input type="radio" name="q4" value="да, почти постоянно" />Да, почти
+        постоянно</label
+      >
+      <label
+        ><input type="radio" name="q4" value="побегу помогать" />Побегу
+        помогать</label
+      >
+    </div>
+
+    <!-- Добавьте остальные вопросы и варианты ответов аналогичным образом -->
+  </form>
+  <button onclick="suggestProfessions()">Подобрать профессии</button>
+  <h2>Вам подходят следующие профессии:</h2>
+  <ul id="suggestions"></ul>
+</div>
 
 {% endblock%}
