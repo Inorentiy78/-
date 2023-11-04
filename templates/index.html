@@ -1,27 +1,17 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="container">
-  <h1>Тест на выбор профессии</h1>
+
+
+<div style="margin: 20px; height: 100%;" class="container">
   <form id="profession-form">
-    <div>
-      <p>Где вы хотите работать?</p>
+  <div class="card text-center">
+    <div class="card-header">Вопрос1</div>
+    <div class="card-body">
+      <h5 class="card-title">Как вы хотите, чтобы люди к вам относились?</h5>
+    
       <label
-        ><input type="radio" name="q1" value="хочу работать среди людей" />Хочу
-        работать среди людей</label
-      >
-      <label
-        ><input type="radio" name="q1" value="хочу работать один" />Хочу
-        работать один</label
-      >
-    </div>
-    <div>
-      <p>Как вы хотите, чтобы люди к вам относились?</p>
-      <label
-        ><input
-          type="radio"
-          name="q2"
-          value="хочу чтобы выполняли мои приказы"
-        />Хочу чтобы выполняли мои приказы</label
+        ><input type="radio" name="q2" value="хочу работать один дома" />Хочу
+        работать один дома</label
       >
       <label
         ><input
@@ -30,48 +20,108 @@
           value="хочу чтобы мы работали вместе и сообща"
         />Хочу чтобы мы работали вместе и сообща</label
       >
+      <label><input
+        
+        type="radio"
+        name="q2"
+        value="хочу чтобы выполняли мои приказы"
+      />Хочу чтобы выполняли мои приказы</label>
+    </div>
+    <div class="card-footer text-muted"></div>
+  </div>
+  </form>
+  <form id="profession-form">
+  <div class="card text-center">
+    <div class="card-header">Вопрос2</div>
+    <div class="card-body">
+      <h5 class="card-title">Какие навыки у вас есть?</h5>
+      
       <label
         ><input type="radio" name="q2" value="хочу работать один дома" />Хочу
-        работать один дома</label
-      >
-    </div>
-    <div>
-      <p>Какие навыки у вас есть?</p>
-      <label
-        ><input type="radio" name="q3" value="помогу ему найти решение" />Помогу
-        ему найти решение</label
+        я его нарисую</label
       >
       <label
         ><input
           type="radio"
-          name="q3"
-          value="начну его учить, ведь я это знаю"
+          name="q2"
+          value="хочу чтобы мы работали вместе и сообща"
         />Начну его учить, ведь я это знаю</label
       >
+      <label><input
+        
+        type="radio"
+        name="q2"
+        value="хочу чтобы выполняли мои приказы"
+      />помогу ему найти решение</label>
+
       <label
-        ><input type="radio" name="q3" value="я его нарисую" />Я его
-        нарисую</label
-      >
-      <label
-        ><input type="radio" name="q3" value="ведь я хороший художник" />Ведь я
+        ><input 
+        type="radio" 
+        name="q2" 
+        value="ведь я хороший художник" />Ведь я
         хороший художник</label
       >
+
     </div>
-    <div>
-      <p>Как часто вы готовы помогать другим?</p>
+    <div class="card-footer text-muted"></div>
+  </div>
+</form>
+<form id="profession-form">
+  <div class="card text-center">
+    <div class="card-header">Вопрос3</div>
+    <div class="card-body">
+      <h5 class="card-title">если твоя подруга попросит тебя сделать прическу, то ты?</h5>
+      
       <label
-        ><input type="radio" name="q4" value="да, почти постоянно" />Да, почти
-        постоянно</label
+        ><input type="radio" name="q2" value="хочу работать один дома" />да, я сделаю ей красивую прическу</label
       >
       <label
-        ><input type="radio" name="q4" value="побегу помогать" />Побегу
-        помогать</label
+        ><input
+          type="radio"
+          name="q2"
+          value="хочу чтобы мы работали вместе и сообща"
+        />Начну его учить, ведь я это знаю</label
       >
+      <label><input
+        
+        type="radio"
+        name="q2"
+        value="хочу чтобы выполняли мои приказы"
+      />да, но я не несу отвестсвенности за результат, т.к. делаю только себе </label>
+
     </div>
+    <div class="card-footer text-muted"></div>
+  </div>
+</form>
 
     <!-- Добавьте остальные вопросы и варианты ответов аналогичным образом -->
   </form>
-  <button onclick="suggestProfessions()">Подобрать профессии</button>
+  <style>
+    button {
+  width: fit-content;
+  min-width: 100px;
+  height: 45px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 2.5px solid #E0E1E4;
+  box-shadow: 0px 0px 20px -20px;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.2s ease-in-out 0ms;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+button:hover {
+  background-color: #F2F2F2;
+  box-shadow: 0px 0px 20px -18px;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+  </style>
+  <button class="jjj"  onclick="suggestProfessions()">Подобрать профессии</button>
   <h2>Вам подходят следующие профессии:</h2>
   <ul id="suggestions"></ul>
 </div>
